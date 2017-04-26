@@ -11,23 +11,24 @@ import com.interview.utils.ConsoleReader;
  */
 public class C1_7_GeneratePermutations {
 
-    public  static void generatePermutations(String str) {
-        generatePermutation("", str);
-    }
+  public static void generatePermutations(String str) {
+    C1_7_GeneratePermutations.generatePermutation("", str);
+  }
 
-    private static void generatePermutation(String prefix, String str) {
-        int n = str.length();
-        if (n == 0) System.out.println(prefix);
-        else {
-            for (int i = 0; i < n; i++)
-                generatePermutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n));
-        }
+  private static void generatePermutation(String prefix, String str) {
+    int n = str.length();
+    if (n == 0) System.out.println(prefix);
+    else {
+      for (int i = 0; i < n; i++)
+        C1_7_GeneratePermutations.generatePermutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i +
+            1, n));
     }
+  }
 
-    public static void main(String[] args) {
-        ConsoleReader reader = new ConsoleReader();
-        System.out.print("Please input a string: ");
-        String str = reader.readLine();
-        generatePermutations(str);
-    }
+  public static void main(String[] args) {
+    ConsoleReader reader = new ConsoleReader();
+    System.out.print("Please input a string: ");
+    String str = reader.readLine();
+    C1_7_GeneratePermutations.generatePermutations(str);
+  }
 }

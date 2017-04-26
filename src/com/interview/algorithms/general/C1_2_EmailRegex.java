@@ -1,6 +1,7 @@
 package com.interview.algorithms.general;
 
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,18 +12,18 @@ import java.util.regex.*;
  */
 public class C1_2_EmailRegex {
 
-    public static void match(String str) {
-        String pattern_str = "(\\S+@\\S+)";
-        Pattern pattern = Pattern.compile(pattern_str);
-        Matcher matcher = pattern.matcher(str);
-        int groups = matcher.groupCount();
-        System.out.println("Matching Groups: " + groups);
-        while(matcher.find())
-            System.out.println("Found : " + matcher.group());
+  public static void match(String str) {
+    String pattern_str = "(\\S+@\\S+)";
+    Pattern pattern = Pattern.compile(pattern_str);
+    Matcher matcher = pattern.matcher(str);
+    int groups = matcher.groupCount();
+    System.out.println("Matching Groups: " + groups);
+    while (matcher.find())
+      System.out.println("Found : " + matcher.group());
 
-    }
+  }
 
-    public static void main(String[] args) {
-        match("test zouzhile@gmail.com zouzhile@ymail.com");
-    }
+  public static void main(String[] args) {
+    C1_2_EmailRegex.match("test zouzhile@gmail.com zouzhile@ymail.com");
+  }
 }

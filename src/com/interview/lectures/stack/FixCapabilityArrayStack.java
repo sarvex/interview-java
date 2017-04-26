@@ -1,49 +1,49 @@
 package com.interview.lectures.stack;
 
-public class FixCapabilityArrayStack<T> implements Stack<T>{
-	
-	private T[] array;
-	private int N;
-	private int current = 0;
-	
-	@SuppressWarnings("unchecked")
-	public FixCapabilityArrayStack(int N){
-		this.N = N;
-		this.array = (T[]) new Object[N];
-	}
+public class FixCapabilityArrayStack<T> implements Stack<T> {
 
-	@Override
-	public void push(T item) {
-		if(this.size() < N){
-			this.array[current++] = item;
-		} else {
-			System.err.println("Stack is full");
-		}
-		
-	}
+  private final T[] array;
+  private final int N;
+  private int current;
 
-	@Override
-	public T pop() {
-		if(!this.isEmpty()){
-			return this.array[--current];
-		} else {
-			return null;
-		}
-	}
+  @SuppressWarnings("unchecked")
+  public FixCapabilityArrayStack(int N) {
+    this.N = N;
+    array = (T[]) new Object[N];
+  }
 
-	@Override
-	public boolean isEmpty() {
-		return current == 0;
-	}
+  @Override
+  public void push(T item) {
+    if (size() < N) {
+      array[current++] = item;
+    } else {
+      System.err.println("Stack is full");
+    }
 
-	@Override
-	public int size() {
-		return current - 1;
-	}
+  }
 
-	@Override
-	public T peek() {
-		return this.array[current];
-	}
+  @Override
+  public T pop() {
+    if (!isEmpty()) {
+      return array[--current];
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return current == 0;
+  }
+
+  @Override
+  public int size() {
+    return current - 1;
+  }
+
+  @Override
+  public T peek() {
+    return array[current];
+  }
 
 }

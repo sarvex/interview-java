@@ -10,23 +10,23 @@ package com.interview.algorithms.general;
  */
 public class C1_4_ExcelColumnToInteger {
 
-    public static int transform(String column) {
-        column = column.toUpperCase();
-        int asciiBase = (int) 'A';
-        int length = column.length();
-        int value = 0;
-        for(int i = 0; i < length; i ++) {
-            int current = column.charAt(i);
-            if(i != 0 && i == length - 1) { // non single char column's ending char
-                value += current - asciiBase;
-            } else {
-                value += (current + 1 - asciiBase) * Math.pow(26, length - 1 - i);
-            }
-        }
-        return value;
+  public static int transform(String column) {
+    column = column.toUpperCase();
+    int asciiBase = (int) 'A';
+    int length = column.length();
+    int value = 0;
+    for (int i = 0; i < length; i++) {
+      int current = column.charAt(i);
+      if (i != 0 && i == length - 1) { // non single char column's ending char
+        value += current - asciiBase;
+      } else {
+        value += (current + 1 - asciiBase) * Math.pow(26, length - 1 - i);
+      }
     }
+    return value;
+  }
 
-    public static void main(String[] args) {
-        System.out.println(transform("c"));
-    }
+  public static void main(String[] args) {
+    System.out.println(C1_4_ExcelColumnToInteger.transform("c"));
+  }
 }

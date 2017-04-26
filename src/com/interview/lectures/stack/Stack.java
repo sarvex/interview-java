@@ -2,14 +2,14 @@ package com.interview.lectures.stack;
 
 public interface Stack<T> {
 
-	public void push(T item);
-	
-	public T pop();
-	
-	public T peek();
-	
-	public boolean isEmpty();
-	
-	public int size();
+  void push(T item);
+
+  T pop();
+
+  T peek();
+
+  boolean isEmpty();
+
+  int size();
 
 }
